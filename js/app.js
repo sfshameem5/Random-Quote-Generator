@@ -18,7 +18,7 @@ $('.new_quote').on('click', function() {
 
 // Generate and apply random color
 	$.ajax({
-		url: "https://www.colr.org/json/color/random",
+		url: "http://www.colr.org/json/color/random",
 		jsonp: 'jsonp',
 		cache: false,
 		success: function(data) {
