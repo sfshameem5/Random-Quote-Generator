@@ -4,7 +4,7 @@ let counter = 0;
 // Generate and apply new quote. 
 $('.new_quote').on('click', function() {
 	$.ajax({
-			url: "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]&callback=",
+			url: "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]&callback=",
 			jsonp: 'jsonp',
 			cache: false, 
 			success: function(data) {
