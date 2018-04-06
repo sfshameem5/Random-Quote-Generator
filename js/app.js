@@ -1,6 +1,5 @@
 let quote, author, color;
 let counter = 0;
-
 // Generate and apply new quote. 
 $('.new_quote').on('click', function() {
 	$.ajax({
@@ -17,15 +16,8 @@ $('.new_quote').on('click', function() {
 	counter += 1; 
 
 // Generate and apply random color
-	$.ajax({
-		url: "http://www.colr.org/json/color/random",
-		jsonp: 'jsonp',
-		cache: false,
-		success: function(data) {
-			color = jQuery.parseJSON(data);
-			color = color.colors[0].hex;
-			color = "#" + color;
-		}
+	color = randomColor({
+		luminosity: 'bright'
 	});
 });
 
@@ -55,5 +47,3 @@ $(document).ajaxStop(function(event, request, settings) {
 	$('.twitter, .new_quote, body, .quote, .author').addClass('trance');
 	$('.twitter, .new_quote').css({backgroundColor: color, color: '#fff', borderColor: 'transparent'});
 });
-
-
